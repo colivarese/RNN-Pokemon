@@ -15,7 +15,7 @@ print(sys.version)
 
 #corpus = "The earth revolves around the sun. The moon revolves around the earth"
 
-w2v.fit(path_to_data='cleaned_data.csv')
+w2v.fit(path_to_data='cleaned_2.csv')
 
 X, y = w2v.generate_training_data()
 
@@ -37,7 +37,7 @@ def predict(model, data, target, save):
             output = []
             for i in range(len(data)):
 
-                epoch_x = data[i].reshape((1,1,6380))
+                epoch_x = data[i].reshape((1,1,6195))
                 prediction,y,h = sess.run([model['output'],
                                            model['y'],
                                            model['states']],
@@ -54,7 +54,7 @@ predictor_model = predictor_rnn.fit()
 N = 10
 trained_model, hidden = predict(predictor_model, X, y, save)
 
-random_sample = random.sample(range(1, 6380), 20)
+random_sample = random.sample(range(1, 6195), 20)
 
 for i in random_sample:
     pred = trained_model[i][0]

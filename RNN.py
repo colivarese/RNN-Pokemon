@@ -4,7 +4,7 @@ import numpy as np
 from tqdm import tqdm
 
 class RNN(object):
-    def __init__(self, chunk_size=6380, n_chunks=1, rnn_size=128, num_out=6380, epochs=50, batch_size=128):
+    def __init__(self, chunk_size=6195, n_chunks=1, rnn_size=128, num_out=6195, epochs=20, batch_size=128):
         self.chunk_size = chunk_size
         self.n_chunks = n_chunks
         self.rnn_size = rnn_size
