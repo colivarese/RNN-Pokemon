@@ -15,7 +15,7 @@ print(sys.version)
 
 #corpus = "The earth revolves around the sun. The moon revolves around the earth"
 
-w2v.fit(path_to_data='cleaned_2.csv')
+w2v.fit(path_to_data='cleaned_3.csv')
 
 X, y = w2v.generate_training_data()
 
@@ -30,6 +30,7 @@ save = 'RNN'
 rnn.train(model, X, y, save)
 
 
+"""
 def predict(model, data, target, save):
         with tf.Session() as sess:
             ENCname = './SVE/'+save+'.ckpt'
@@ -37,7 +38,7 @@ def predict(model, data, target, save):
             output = []
             for i in range(len(data)):
 
-                epoch_x = data[i].reshape((1,1,6195))
+                epoch_x = data[i].reshape((1,1,6098)) #6195
                 prediction,y,h = sess.run([model['output'],
                                            model['y'],
                                            model['states']],
@@ -66,4 +67,5 @@ for i in random_sample:
     for j in idx:
         print(w2v.get_word_with_id(j), ', ', end='')
     print('}')
+"""
 
